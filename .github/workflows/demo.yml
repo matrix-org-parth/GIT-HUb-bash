@@ -1,0 +1,15 @@
+name: demo-action
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+        - uses : actions/checkout@v4
+        - name: run as sample job 
+          run: echo "hello world!"
+           
+          
