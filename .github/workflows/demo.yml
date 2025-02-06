@@ -1,9 +1,9 @@
 name: demo-action
 
 on:
-#   push:
-#     branches: 
-#       - main
+  #   push:
+  #     branches: 
+  #       - main
   workflow_dispatch:
 
 jobs:
@@ -19,8 +19,9 @@ jobs:
         with:
           name: build-artifact
           path: ${{ github.workspace }}
+
   deploy:     
-   runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:    
       - name: Download Artifact
         uses: actions/download-artifact@v2
