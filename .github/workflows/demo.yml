@@ -1,8 +1,9 @@
 name: demo-action
 
-on:
-  push:
-    branches: main
+# on:
+#   push:
+#     branches: main
+workflow_dispatch:
 
 jobs:
   build:
@@ -11,5 +12,11 @@ jobs:
         - uses : actions/checkout@v4
         - name: run as sample job 
           run: echo "hello world!"
+
+        - uses: Upload Artifect
+        - name: actions/upload-artifact@v4
+          with:
+            name: build=artifact
+            path: ${{github.workspace}}
            
           
