@@ -19,7 +19,9 @@ jobs:
         with:
           name: build-artifact
           path: ${{ github.workspace }}
-          
+  deploy:     
+   runs-on: ubuntu-latest
+    steps:    
       - name: Download Artifact
         uses: actions/download-artifact@v2
         with:
